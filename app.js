@@ -1,9 +1,6 @@
 const calculator = document.querySelector('.calculator');
 const buttons = document.querySelector('.calculator__buttons');
-const firstOperend = document.querySelector('.calculator__operend--left');
-const operator = document.querySelector('.calculator__operator');
-const secondOperend = document.querySelector('.calculator__operend--right');
-const calculatedResult = document.querySelector('.calculator__result');
+const display = document.querySelector('.calculator__display');
 
 
 // 변화되는 operator에 따라 n1 과 n2 를 계산하는 함수 
@@ -27,44 +24,13 @@ function calculate(n1, operator, n2) {
 
 // 버튼을 눌렀을때 작동하는 함수
 
-buttons.addEventListener('click', (event) => {
-    const target = event.target;
-    const action = target.classList[0];
-    const buttonContent = target.textContent;
-
-    if(target.matches('button')) {
-        if(action === 'number') {
-            if(firstOperend.textContent !== '0') {
-                secondOperend.textContent = buttonContent;
-            }else{
-                firstOperend.textContent = buttonContent;
-            }
-            // console.log('우하하');
-        }
-        if(action === 'operator') {
-            operator.textContent = buttonContent;
-        }
-        if(action === 'clear') {
-            firstOperend.textContent = '0';
-            operator.textContent = '+';
-            secondOperend.textContent = '0';
-            calculatedResult.textContent = '0';
-        }
-        if(action === 'calculate') {
-            calculatedResult.textContent = calculate(firstOperend.textContent, operator.textContent, secondOperend.textContent);
-        }
-    }
-})
-
-const display = document.querySelector('.calculator__display--for-advanced');
 let firstNum, operatorForAdvanced, previousKey, previousNum;
 
 buttons.addEventListener('click', (event) => {
-    const target = event.target; // 클릭된 HTML 엘리먼트의 정보가 저장되어 있습니다.
-  const action = target.classList[0]; // 클릭된 HTML 엘리먼트에 클레스 정보를 가져옵니다.
-  const buttonContent = target.textContent; // 클릭된 HTML 엘리먼트의 텍스트 정보를 가져옵니다.
+    const target = event.target; 
+  const action = target.classList[0]; 
+  const buttonContent = target.textContent;
   const buttonContainerArray = buttons.children;
-  // ! 위 코드는 수정하지 마세요.
 
   if (target.matches('button')) {
     for (let i = 0; i < buttonContainerArray.length; i++) {
