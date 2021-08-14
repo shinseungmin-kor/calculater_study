@@ -2,7 +2,6 @@ const calculator = document.querySelector('.calculator');
 const buttons = document.querySelector('.calculator__buttons');
 const display = document.querySelector('.calculator__display');
 
-
 // 변화되는 operator에 따라 n1 과 n2 를 계산하는 함수 
 
 function calculate(n1, operator, n2) {
