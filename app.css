@@ -84,7 +84,7 @@
     border-radius: 10px;
     width: 50px;
     height: 40px;
-    margin: 0px 5px;
+    margin: 0px 14px;
     background-color: #00da75;
     cursor: pointer;
     outline: none;
@@ -96,7 +96,6 @@
     align-items: center;
     height: 50px;
     margin: 10px;
-    /* background-color: #f3f0fc; */
   }
 
   .button__row > button {
